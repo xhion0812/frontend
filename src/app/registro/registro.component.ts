@@ -62,9 +62,9 @@ export class RegistroComponent implements OnInit {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'Se registro exitosamente!',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000
           }).then(() => {
             this.route.navigate(['/inicio2'])
           })

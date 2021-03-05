@@ -5,18 +5,24 @@ import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RegistroverifiComponent } from './registroverifi/registroverifi.component';
 import { Inicio2Component } from './inicio2/inicio2.component'
+import { BodyComponent } from './body/body.component';
+import { CarritoComponent } from './carrito/carrito.component'
+
+
 
 const routes: Routes = [
-  {path: '', component: InicioComponent},
-  {path: 'registro', component: RegistroComponent},
-  {path: 'registro-verificacion', component: RegistroverifiComponent},
-  {path: 'inicio-sesion', component: InicioSesionComponent},
-  {path: 'inicio2', component: Inicio2Component}
+  { path: '', component: InicioComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'registro-verificacion', component: RegistroverifiComponent },
+  { path: 'inicio-sesion', component: InicioSesionComponent },
+  { path: 'inicio2', component: Inicio2Component },
+  { path: 'body', component: BodyComponent },
+  { path: 'carrito', component: CarritoComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  
+
 })
 export class AppRoutingModule { }

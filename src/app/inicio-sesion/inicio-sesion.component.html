@@ -1,56 +1,33 @@
-<div *ngIf="load">
-    <div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-				
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
-			</div>
-			<div class="card-body">
-				<form method="POST" action="/inicio-sesion" [formGroup]='form' (ngSubmit)="onSubmit()">
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de Usuario">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input formControlName="password" type="password" class="form-control" placeholder="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Recordarme
-					</div>
-					<div class="form-group">
-						<input  type="submit" value="Login" class="btn float-right login_btn">
-					
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href='/registro'>Sign Up</a>
-				
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
+<div class="fondo">
+    <div *ngIf="load">
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 main-section">
+                <div class="modal-content">
+                    <div class="col-12 user-img">
+                        <img src="https://3.bp.blogspot.com/-7dGg2SxOnPc/W58gx5zIm3I/AAAAAAAAFCM/ov25hkvKW0I0B-qruNE4_7wP0v7tiW5sQCLcBGAs/s1600/favicon.png" th:src="@{/img/user.png}" />
+                    </div>
+                    <form method="POST" action="/inicio-sesion" [formGroup]='form' (ngSubmit)="onSubmit()">
+                        <div class="form-group" id="user-group">
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de Usuario">
+                        </div>
+                        <div class="form-group" id="contrasena-group">
+                            <input formControlName="password" type="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <input style="color:red" type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
 
-<div *ngIf="!load" class="spinner-border text-primary" role="status">
-    <span class="sr-only">Loading...</span>
-</div>
+                    <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                        ¿No tienes una cuenta?<a href='/registro'>Suscribirse</a>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!load" class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <app-footer></app-footer>
