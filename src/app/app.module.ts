@@ -14,6 +14,7 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Inicio2Component } from './inicio2/inicio2.component';
     BodyComponent,
     FooterComponent,
     InicioSesionComponent,
-    Inicio2Component
+    Inicio2Component,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
