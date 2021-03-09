@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from "angular-datatables";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +29,16 @@ import { CarritoComponent } from './carrito/carrito.component';
     FooterComponent,
     InicioSesionComponent,
     Inicio2Component,
-    CarritoComponent
+    CarritoComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

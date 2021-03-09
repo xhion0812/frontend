@@ -7,7 +7,7 @@ import { RegistroverifiComponent } from './registroverifi/registroverifi.compone
 import { Inicio2Component } from './inicio2/inicio2.component'
 import { BodyComponent } from './body/body.component';
 import { CarritoComponent } from './carrito/carrito.component'
-
+import {TablaComponent} from './tabla/tabla.component'
 
 
 const routes: Routes = [
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'inicio-sesion', component: InicioSesionComponent },
   { path: 'inicio2', component: Inicio2Component },
   { path: 'body', component: BodyComponent },
-  { path: 'carrito', component: CarritoComponent }
+  { path: 'carrito', component: CarritoComponent },
+  { path: 'tabla', component: TablaComponent}
 ];
 
 @NgModule({
