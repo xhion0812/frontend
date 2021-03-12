@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from 'jquery';
-import { TablaService} from '../Services/tabla.service'
+import { ClientService } from '../Services/client.service'
 @Component({
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
@@ -18,14 +18,15 @@ export class TablaComponent implements OnInit {
   
   
   
-  constructor(private tabla: TablaService) {}
+  constructor(private client: ClientService) {}
 
   ngOnInit(): void {
    
 
-    this.tabla.getRequest('http://localhost:5000/api/v01/user/tabla').subscribe(
+    this.client.getRequest('http://localhost:5000/api/v01/user/tabla').subscribe(
       (data): any => {
         this.productos = data["datos"]
+          console.log(data["datos"])
       },
 
       (error: any) => {
@@ -45,7 +46,7 @@ export class TablaComponent implements OnInit {
       }
     };
     console.log(8787);
-    console.log(data["datos"])
+  
   
   }
   
