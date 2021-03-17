@@ -7,7 +7,7 @@ import { ClientService } from '../Services/client.service'
   styleUrls: ['./tabla.component.css']
 })
 export class TablaComponent implements OnInit {
-  tablaDato;
+  
   title = 'DataTables';
   dtOptions: DataTables.Settings = {};
   

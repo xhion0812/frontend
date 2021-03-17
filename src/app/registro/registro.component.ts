@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegistroService } from '../Services/registro.service';
+import { ClientService } from '../Services/client.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -17,7 +17,7 @@ export class RegistroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: Router,
-    private client: RegistroService
+    private client: ClientService 
   ) { }
 
 
@@ -44,14 +44,14 @@ export class RegistroComponent implements OnInit {
         apellidos: this.form.value.apellidos,
         cedula: this.form.value.cedula,
         direccion: this.form.value.direccion,
-        telefonon: this.form.value.telefono,
+        telefono: this.form.value.telefono,
         correo: this.form.value.correo,
         password: this.form.value.password,
         password_verifi: this.form.value.password_verifi,
       }
 
       this.load = false;
-      this.client.postRequest('http://localhost:5000/api/v01/user/registro', data).subscribe(
+      this.client.postRequestRegistro('http://localhost:5000/api/v01/user/registro',data).subscribe(
 
         (response: any) => {
           this.load = true;
@@ -77,7 +77,6 @@ export class RegistroComponent implements OnInit {
         console.log(error.status);
 
       }
-
 
     } else {
 
