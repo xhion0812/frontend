@@ -17,6 +17,7 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { TablaComponent } from './tabla/tabla.component';
+import { CashComponent } from './cash/cash.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TablaComponent } from './tabla/tabla.component';
     InicioSesionComponent,
     Inicio2Component,
     CarritoComponent,
-    TablaComponent
+    TablaComponent,
+    CashComponent
   ],
   imports: [
     BrowserModule,
