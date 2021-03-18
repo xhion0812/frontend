@@ -27,8 +27,13 @@
         </div>
         <h1 *ngIf="auth.isLoggedIn() | async">Se ha Logueado exitosamente!</h1>
     </div>
-    <div *ngIf="!load" class="spinner-border text-primary" role="status">
+    <div *ngIf="!load" class="sk-chase" role="status">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<app-footer></app-footer>
