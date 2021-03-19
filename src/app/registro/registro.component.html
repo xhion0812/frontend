@@ -18,8 +18,13 @@
                             </div>
 
                             <div class="form-group col-md-6">
+<<<<<<< HEAD
                                 <label for="documento">Documento</label>
                                 <input formControlName="documento" type="text" class="form-control" name="documento" placeholder="Ingrese su Documento">
+=======
+                                <label for="inputAddress">Documento</label>
+                                <input formControlName="documento" type="text" class="form-control" name="documento" placeholder="Ingrese su documento">
+>>>>>>> 1ca17dbd4ff16ba6b14e9bb0f498c0b881ad9b25
                             </div>
                         </div>
 
@@ -59,8 +64,11 @@
             </div>
         </div>
     </div>
-    <div *ngIf="!load" class="spinner-border text-primary" role="status">
+    <div *ngIf="!load" class="sk-folding-cube" role="status">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<app-footer></app-footer>

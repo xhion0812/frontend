@@ -25,7 +25,11 @@ export class RegistroComponent implements OnInit {
     this.form = this.fb.group({
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
+<<<<<<< HEAD
       documento: ['', Validators.required],
+=======
+     documento: ['', Validators.required],
+>>>>>>> 1ca17dbd4ff16ba6b14e9bb0f498c0b881ad9b25
       direccion: ['', Validators.required],
       telefono: ['', Validators.required],
       correo: ['', Validators.required],
