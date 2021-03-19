@@ -25,7 +25,7 @@ export class RegistroComponent implements OnInit {
     this.form = this.fb.group({
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
-      cedula: ['', Validators.required],
+      documento: ['', Validators.required],
       direccion: ['', Validators.required],
       telefono: ['', Validators.required],
       correo: ['', Validators.required],
@@ -42,7 +42,7 @@ export class RegistroComponent implements OnInit {
       let data = {
         nombres: this.form.value.nombres,
         apellidos: this.form.value.apellidos,
-        cedula: this.form.value.cedula,
+        documento: this.form.value.documento,
         direccion: this.form.value.direccion,
         telefono: this.form.value.telefono,
         correo: this.form.value.correo,

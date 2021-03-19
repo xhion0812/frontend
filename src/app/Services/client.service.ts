@@ -19,7 +19,7 @@ export class ClientService {
     return this.http.get(route, config);
 
 }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 postRequestRegistro(route: string, data?:any) {
 
@@ -31,7 +31,7 @@ postRequestRegistro(route: string, data?:any) {
 
 }
 
-=======
+//=======
  getRequestToken(route: string, token?:string) {
 
     let config:any = {
@@ -59,7 +59,7 @@ postRequestRegistro(route: string, data?:any) {
 
     return this.http.post(route, data, config);
   }
->>>>>>> 3db48a3c28f239eeeb7ef1616dbd5b380f7a8e22
+//>>>>>>> 3db48a3c28f239eeeb7ef1616dbd5b380f7a8e22
 }
 
  
