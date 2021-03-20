@@ -25,11 +25,7 @@ export class RegistroComponent implements OnInit {
     this.form = this.fb.group({
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
-<<<<<<< HEAD
       documento: ['', Validators.required],
-=======
-     documento: ['', Validators.required],
->>>>>>> 1ca17dbd4ff16ba6b14e9bb0f498c0b881ad9b25
       direccion: ['', Validators.required],
       telefono: ['', Validators.required],
       correo: ['', Validators.required],
@@ -59,6 +55,7 @@ export class RegistroComponent implements OnInit {
 
         (response: any) => {
           this.load = true;
+          console.log(response)
           //cambiando load a true, volvemos a ocultar el spinner
           //this.load = true;
           //this.route.navigate(['/inicio2']);
@@ -74,6 +71,7 @@ export class RegistroComponent implements OnInit {
           })
 
           });
+          //console.log(response);
 
       (error) => {
         //this.load = true;

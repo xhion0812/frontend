@@ -43,7 +43,7 @@ async onSubmit() {
   this.client.postRequest('http://localhost:5000/api/v01/user/inicio-sesion', data).subscribe(
   
   (respuesta: any) => {
-
+    console.log(respuesta)
     this.route.navigate(['/inicio2']);
     
   },
