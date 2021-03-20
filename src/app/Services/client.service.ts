@@ -9,6 +9,16 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
+
+  postRequest(route: string, data?:any) {
+
+    let config:any = {
+      responseType: "json"
+    }
+
+    return this.http.post(route, data, config);
+
+}
   getRequest(route: string) {
 
     let config:any = {
@@ -45,7 +55,7 @@ postRequestRegistro(route: string, data?:any) {
   }
 
 
-  postRequest(route: string, data?:any, token?:string) {
+  postRequestLogin(route: string, data?:any, token?:string) {
     let config:any = {
       responseType: "json"
     }

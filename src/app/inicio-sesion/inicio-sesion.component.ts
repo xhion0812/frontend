@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InicioSesionService } from '../Services/inicio-sesion.service';
+import {  ClientService } from '../Services/client.service';
 import { AuthService } from '../Services/auth.service';
 
 
@@ -18,7 +18,7 @@ export class InicioSesionComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private route: Router,
-    private client: InicioSesionService,
+    private client: ClientService,
     private auth: AuthService
   ) { }
 
@@ -63,7 +63,7 @@ async onSubmit() {
 
         if (this.form.valid) {
 
-          this.client.postRequest('http://localhost:5000/api/v01/user/login', {
+          this.client.postRequestLogin('http://localhost:5000/api/v01/user/login', {
             email: this.form.value.email,
             password: this.form.value.password
           }).subscribe(
