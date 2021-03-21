@@ -18,6 +18,10 @@ import { Inicio2Component } from './inicio2/inicio2.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { CashComponent } from './cash/cash.component';
+import { LacteosComponent } from './lacteos/lacteos.component';
+import { LegumbresComponent } from './legumbres/legumbres.component';
+import { CarnicosComponent } from './carnicos/carnicos.component';
+import { VerdurasComponent } from './verduras/verduras.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { CashComponent } from './cash/cash.component';
     Inicio2Component,
     CarritoComponent,
     TablaComponent,
-    CashComponent
+    CashComponent,
+    LacteosComponent,
+    LegumbresComponent,
+    CarnicosComponent,
+    VerdurasComponent
   ],
   imports: [
     BrowserModule,
