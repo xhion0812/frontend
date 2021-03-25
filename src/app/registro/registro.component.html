@@ -6,7 +6,6 @@
                 <form method="POST" action="/registro" [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="texto">
                         <div class="form-row">
-
                             <div class="form-group col-md-6">
                                 <label for="nombres">Nombres</label>
                                 <input formControlName="nombres" type="text" class="form-control" name="nombres" placeholder="Ingrese su nombre completo">
@@ -53,8 +52,12 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
-
+                    <div class="col-md-4 mb-2">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <a class="boton1" href="/inicio" class="btn btn-primary">Inicio</a>
+                    </div>
                 </form>
             </div>
         </div>
