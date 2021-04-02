@@ -12,7 +12,10 @@ import { TablaComponent } from './tabla/tabla.component'
 import { CarnicosComponent} from './carnicos/carnicos.component'
 import { LegumbresComponent} from './legumbres/legumbres.component'
 import { VerdurasComponent} from './verduras/verduras.component'
-import { CashComponent  } from './cash/cash.component'
+import { CashComponent } from "./cash/cash.component"
+
+
+
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -26,8 +29,11 @@ const routes: Routes = [
   { path: 'lacteos', component: LacteosComponent},
   { path: 'carnicos', component: CarnicosComponent},
   { path: 'legumbres', component: LegumbresComponent},
-  {path: 'cash', component: CashComponent},
+
+  { path: 'verduras', component: VerdurasComponent},
+  { path: 'cash', component: CashComponent},
   { path: 'verduras', component: VerdurasComponent}
+
 ];
 
 @NgModule({

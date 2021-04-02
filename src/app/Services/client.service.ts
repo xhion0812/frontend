@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
-import { copyFile } from 'fs';
+
 
 
 @Injectable({
@@ -23,6 +23,8 @@ export class ClientService {
     return this.http.get(route, config);
   
   }
+
+
 
   postRequestRegistro(route: string, data?:any, token?:string) {
 
@@ -49,7 +51,6 @@ export class ClientService {
     }
     return this.http.post(route, data, config);
   }
-
 
  getRequestToken(route: string, token?:string) {
 
@@ -79,5 +80,3 @@ export class ClientService {
     return this.http.post(route, data, config);
   }
 }
-
- 

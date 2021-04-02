@@ -15,13 +15,14 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { CashComponent } from './cash/cash.component';
 import { LacteosComponent } from './lacteos/lacteos.component';
 import { LegumbresComponent } from './legumbres/legumbres.component';
 import { CarnicosComponent } from './carnicos/carnicos.component';
 import { VerdurasComponent } from './verduras/verduras.component';
+import { CartComponent } from './cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -34,13 +35,13 @@ import { VerdurasComponent } from './verduras/verduras.component';
     FooterComponent,
     InicioSesionComponent,
     Inicio2Component,
-    CarritoComponent,
     TablaComponent,
     CashComponent,
     LacteosComponent,
     LegumbresComponent,
     CarnicosComponent,
-    VerdurasComponent
+    VerdurasComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
