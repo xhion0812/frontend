@@ -3,22 +3,22 @@
         <div class="registro">
 
             <div class="formulario">
-                <form method="POST" action="/registro" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <form  [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="texto">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="nombres">Nombres</label>
-                                <input formControlName="nombres" type="text" class="form-control" name="nombres" placeholder="Ingrese su nombre completo">
+                                <label for="inputAddress">Nombres</label>
+                                <input formControlName="nombres" type="text" class="form-control" name="nombreCompleto" placeholder="Ingrese su nombre completo">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="apellidos">Apellidos</label>
-                                <input formControlName="apellidos" type="text" class="form-control" name="apellidos" placeholder="apellidos">
+                                <label for="inputAddress1">Apellidos</label>
+                                <input formControlName="apellidos" type="text" class="form-control" name="apellido" placeholder="apellidos">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="documento">Documento</label>
-                                <input formControlName="documento" type="text" class="form-control" name="documento" placeholder="Ingrese su Documento">
+                                <label for="inputAddress">Documento</label>
+                                <input formControlName="documento" type="text" class="form-control" name="documento" placeholder="Ingrese su documento">
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="correo">Correo</label>
+                                <label for="inputCity">Correo</label>
                                 <input formControlName="correo" type="email" class="form-control" name="correo" placeholder="Ingrese su correo">
                             </div>
 
@@ -42,21 +42,22 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="password">Contraseña</label>
-                                <input formControlName="password" type="password" class="form-control" name="password" placeholder="Ingrese su clave">
+                                <label for="telefono">Clave</label>
+                                <input formControlName="password" type="password" class="form-control" name="clave" placeholder="Ingrese su clave">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="inputCity">Ingrese su Clave</label>
                                 <input formControlName="password_verifi" type="password" class="form-control" name="confirmarClave" placeholder="Repetir Clave">
                             </div>
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
                         <button type="submit" class="btn btn-primary">Registrarse</button>
                     </div>
                     <div class="col-xs-12 col-md-4">
-                        <a class="boton1" href="/inicio" class="btn btn-primary">Inicio</a>
+                        <a class="boton1" href='/' class="btn btn-primary">Inicio</a>
                     </div>
                 </form>
             </div>
