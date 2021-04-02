@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IItem } from '../interfaces/item.interface';
 import { CartService } from '../services/cart.service';
+
+
+
 @Component({
   selector: 'app-lacteos',
   templateUrl: './lacteos.component.html',
@@ -47,3 +50,4 @@ export class LacteosComponent implements OnInit {
       this._cartService.changeCart(product);
     }
   }
+

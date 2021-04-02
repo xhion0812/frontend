@@ -1655,7 +1655,8 @@ responsive
 
 /* Wide Mobile Layout: 480px. */
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
 @white: #FFFFFF;
@@ -1839,7 +1840,7 @@ div.card.show {
     div.flap2 {
         transition: all 0.3s 0.2s ease-out;
     }
-}
+} */
 
 .card-description {
     font-size: 10px

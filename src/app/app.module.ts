@@ -15,7 +15,6 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { CashComponent } from './cash/cash.component';
 import { LacteosComponent } from './lacteos/lacteos.component';
@@ -36,7 +35,6 @@ import { CartComponent } from './cart/cart.component';
     FooterComponent,
     InicioSesionComponent,
     Inicio2Component,
-    CarritoComponent,
     TablaComponent,
     CashComponent,
     LacteosComponent,

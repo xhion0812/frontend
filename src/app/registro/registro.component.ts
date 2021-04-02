@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegistroService } from '../Services/registro.service';
+import { ClientService } from '../Services/client.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -17,7 +17,7 @@ export class RegistroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: Router,
-    private client: RegistroService
+    private client: ClientService
   ) { }
 
 
@@ -33,35 +33,37 @@ export class RegistroComponent implements OnInit {
       password_verifi: ['', Validators.required]
     });
   }
-
+  
   async onSubmit() {
-
 
     if (this.form.valid) {
 
-      let data = {
+      this.load = false;
+      this.client.postRequestRegistro('http://localhost:5000/api/v01/user/registro',{
         nombres: this.form.value.nombres,
         apellidos: this.form.value.apellidos,
         documento: this.form.value.documento,
         direccion: this.form.value.direccion,
-        telefonon: this.form.value.telefono,
+        telefono: this.form.value.telefono,
         correo: this.form.value.correo,
         password: this.form.value.password,
         password_verifi: this.form.value.password_verifi,
-      }
-
-      this.load = false;
-      this.client.postRequest('http://localhost:5000/api/v01/user/registro', data).subscribe(
+      
+      }).subscribe(
 
         (response: any) => {
           this.load = true;
+          console.log(response);
+
+          //localStorage.setItem('token', response.token)
+          //console.log(localStorage.setItem('token'));
+          
           //cambiando load a true, volvemos a ocultar el spinner
           //this.load = true;
           //this.route.navigate(['/inicio2']);
-          //console.log(response);
+           //console.log(response);
           Swal.fire({
             position: 'top-end',
-            icon: 'success',
             title: 'Se registro exitosamente!',
             showConfirmButton: false,
             timer: 2000
@@ -83,11 +85,7 @@ export class RegistroComponent implements OnInit {
 
       console.log("Form error");
     }
-
+  
 
   }
-
-
-
-
 }

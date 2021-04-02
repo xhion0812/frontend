@@ -17,13 +17,13 @@ export class TablaComponent implements OnInit {
   
   
   
-  
   constructor(private client: ClientService) {}
 
   ngOnInit(): void {
    
 
-    this.client.getRequest('http://localhost:5000/api/v01/user/tabla').subscribe(
+    this.client.getRequestTable('http://localhost:5000/api/v01/user/tabla',localStorage.getItem('token')).subscribe(
+      
       (data): any => {
         this.productos = data["datos"]
           console.log(data["datos"])

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InicioSesionService } from '../Services/inicio-sesion.service';
 import { AuthService } from '../Services/auth.service';
+import { ClientService } from '../Services/client.service';
+
+
 
 
 @Component({
@@ -18,7 +20,9 @@ export class InicioSesionComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private route: Router,
-    private client: InicioSesionService,
+
+    private client: ClientService,
+
     private auth: AuthService
   ) { }
 
@@ -40,11 +44,18 @@ async onSubmit() {
     }
 
   this.load = false;
-  this.client.postRequest('http://localhost:5000/api/v01/user/inicio-sesion', data).subscribe(
+  this.client.postRequestInicioSesion('http://localhost:5000/api/v01/user/inicio-sesion', {
+   email: this.form.value.email,
+   password: this.form.value.password
+  }).subscribe(
   
-  (respuesta: any) => {
+  (response: any) => {
+    console.log(response);
 
-    this.route.navigate(['/inicio2']);
+    localStorage.setItem('token', response.token)
+    console.log(localStorage.getItem('token'));    
+    
+    this.route.navigate(['/']);
     
   },
 
