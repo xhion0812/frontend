@@ -6,7 +6,6 @@
                 <form method="POST" action="/registro" [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="texto">
                         <div class="form-row">
-
                             <div class="form-group col-md-6">
                                 <label for="inputAddress">Nombres</label>
                                 <input formControlName="nombres" type="text" class="form-control" name="nombreCompleto" placeholder="Ingrese su nombre completo">
@@ -18,8 +17,8 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="inputAddress">Cedula</label>
-                                <input formControlName="cedula" type="text" class="form-control" name="cedula" placeholder="Ingrese su Cedula">
+                                <label for="inputAddress">Documento</label>
+                                <input formControlName="documento" type="text" class="form-control" name="documento" placeholder="Ingrese su documento">
                             </div>
                         </div>
 
@@ -54,14 +53,21 @@
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
-
+                    <div class="col-md-4 mb-2">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <a class="boton1" href="/inicio" class="btn btn-primary">Inicio</a>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    <div *ngIf="!load" class="spinner-border text-primary" role="status">
+    <div *ngIf="!load" class="sk-folding-cube" role="status">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<app-footer></app-footer>

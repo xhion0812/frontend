@@ -7,8 +7,12 @@ import { RegistroverifiComponent } from './registroverifi/registroverifi.compone
 import { Inicio2Component } from './inicio2/inicio2.component'
 import { BodyComponent } from './body/body.component';
 import { CarritoComponent } from './carrito/carrito.component'
-import {TablaComponent} from './tabla/tabla.component'
-
+import { LacteosComponent} from './lacteos/lacteos.component'
+import { TablaComponent } from './tabla/tabla.component'
+import { CarnicosComponent} from './carnicos/carnicos.component'
+import { LegumbresComponent} from './legumbres/legumbres.component'
+import { VerdurasComponent} from './verduras/verduras.component'
+import { CashComponent } from "./cash/cash.component"
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -18,7 +22,13 @@ const routes: Routes = [
   { path: 'inicio2', component: Inicio2Component },
   { path: 'body', component: BodyComponent },
   { path: 'carrito', component: CarritoComponent },
-  { path: 'tabla', component: TablaComponent}
+  { path: 'tabla', component: TablaComponent},
+  { path: 'lacteos', component: LacteosComponent},
+  { path: 'carnicos', component: CarnicosComponent},
+  { path: 'legumbres', component: LegumbresComponent},
+  { path: 'verduras', component: VerdurasComponent},
+  { path: 'cash', component: CashComponent}
+
 ];
 
 @NgModule({
