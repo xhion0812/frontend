@@ -95,10 +95,13 @@ body { font-family:Arial, Helvetica, sans-serif; }
     background: none repeat scroll 0 0 #fbfbfb;
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
-width: auto;
+width: 1300px;
 z-index: 999;}
 
 
+.container-fluid{
+    width: 800px;
+}
 
 .logo h1 {
     font-size: 40px;
@@ -163,15 +166,15 @@ z-index: 999;}
 .mainmenu-area ul.navbar-nav li a {
     color: #6e6a6a;
     font-size: 14px;
-    padding: 20px;
+    padding: 15px;
+    margin: 30px;
     
 }
-
 
 
 .carrito{
     width: 300px;
     height: 100px;
     float: right;
-    
+    margin: 0% -6% 5% 0%;
 }

@@ -17,6 +17,23 @@ img {
     max-width: 100%;
     height: auto;
 }
+/*-----------------------------*/
+
+
+
+.nav-item a {
+    color: beige;
+    font-size: 17px;
+    font-weight: 550;
+   
+}
+
+.d-flex{
+width: 250px;
+}
+/*-----------------------------*/
+
+
 .fix { overflow: hidden }
 h1,
 h2,
@@ -73,13 +90,17 @@ body { font-family:Arial, Helvetica, sans-serif; }
     text-align: center;
 }
 
-.mainmenu-area {background: none repeat scroll 0 0 #fbfbfb;
+.mainmenu-area {
+
+    background: none repeat scroll 0 0 #fbfbfb;
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
-width: 100%;
+width: 1300px;
 z-index: 999;}
 
-
+.container-fluid{
+    width: 800px;
+}
 
 .logo h1 {
     font-size: 40px;
@@ -145,74 +166,15 @@ z-index: 999;}
     color: #6e6a6a;
     font-size: 14px;
     padding: 20px;
+    margin: 30px;
+    
 }
 
-.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;}
-.mainmenu-area .nav > li > a:focus {color: #FFF;}
 
-.slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
-/*-------------------------
-[9. Block slider]
----------------------------*/
-.block-slider{
-	border:none;
-	width: 100%;
-}
-.block-slider ul li{
-	list-style: none;
-}
-.block-slider .bx-pager{
-	display: none;
-}
-.block-slider .bx-prev,
-.block-slider .bx-next{
-	width: 32px;
-	height: 32px;
-	border: 1px solid #eaeaea;
-	text-align: center;
-	display: block;
-	border-radius: 50%;
-	font-size: 30px;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	line-height: 29px;
-	-moz-transition: all 0.45s ease;
-	-webkit-transition: all 0.45s ease;
-	-o-transition: all 0.45s ease;
-	-ms-transition: all 0.45s ease;
-	transition: all 0.45s ease;
-}
-.block-slider img{
-	width: 100%;
-	height: auto;
-}
-.block-slider .bx-prev{
-	left: 0px;
-	padding-right: 3px;
-}
-.block-slider .bx-next{
-	right: 0px;
-	padding-left: 3px;
-}
-.block-slider:hover .bx-prev{
-	left: 10px;
-}
-.block-slider:hover .bx-next{
-	right: 10px;
-}
-.block-slider .bx-prev:hover,
-.block-slider .bx-next:hover{
-	background: #5a88ca;
-	color: #fff;
-	border-color: #5a88ca;
-}
 
 .carrito{
     width: 300px;
     height: 100px;
     float: right;
-    
+    margin: 0% -6%;
 }
