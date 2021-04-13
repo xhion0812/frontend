@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../Services/auth.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-nav2',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Nav2Component implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService, private route: Router) { }
 
   ngOnInit(): void {
+
+  }
+  public abrirCart:boolean = false;
+
+  irInicio(){
+    this.route.navigate(['/'])
   }
 
+  irInicioSesion(){
+    this.route.navigate(['/inicio-sesion'])
+  }
+  irTable(){
+    this.route.navigate(['/tabla'])
+  }
+  
+
+  cart(){
+
+    this.abrirCart = !this.abrirCart;
+  }
 }

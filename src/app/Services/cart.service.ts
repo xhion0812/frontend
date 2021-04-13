@@ -5,46 +5,44 @@ import { IItem } from '../interfaces/item.interface';
   providedIn: 'root'
 })
 export class CartService {
-  private cart = new BehaviorSubject<Array<IItem>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
-  public currentDataCart$ = this.cart.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
+  private carrito = new BehaviorSubject<Array<IItem>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
+  public datoCarrito = this.carrito.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
   constructor() { }
-  public changeCart(newData: IItem) {
+  
+  public enviarCarrito(newData: IItem) {
     //Obtenemos el valor actual
-    let listCart = this.cart.getValue();
+    let listCarrito = this.carrito.getValue();
     //Si no es el primer item del carrito
-    if(listCart)
-    {
+    if(listCarrito){
       //Buscamos si ya cargamos ese item en el carrito
-      let objIndex = listCart.findIndex((obj => obj.id == newData.id));
+      let objIndex = listCarrito.findIndex((obj => obj.id == newData.id));
       //Si ya cargamos uno aumentamos su cantidad
-      if(objIndex != -1)
-      {
-        listCart[objIndex].quantity += 1;
+      if(objIndex != -1){
+        listCarrito[objIndex].cantidad += 1;
       }
       //Si es el primer item de ese tipo lo agregamos derecho al carrito
       else {
-        listCart.push(newData);
+        listCarrito.push(newData);
       }
     }
     //Si es el primer elemento lo inicializamos
     else {
-      listCart = [];
-      listCart.push(newData);
+      listCarrito = [];
+      listCarrito.push(newData);
     }
-    this.cart.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
+    this.carrito.next(listCarrito); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
   }
-  public removeElementCart(newData:IItem){
+  public removerElementoCarrito(newData:IItem){
     //Obtenemos el valor actual de carrito
-    let listCart = this.cart.getValue();
+    let listCarrito = this.carrito.getValue();
     //Buscamos el item del carrito para eliminar
-    let objIndex = listCart.findIndex((obj => obj.id == newData.id));
-    if(objIndex != -1)
-    {
+    let objIndex = listCarrito.findIndex((obj => obj.id == newData.id));
+    if(objIndex != -1){
       //Seteamos la cantidad en 1 (ya que los array se modifican los valores por referencia, si vovlemos a agregarlo la cantidad no se reiniciará)
-      listCart[objIndex].quantity = 1;
+      listCarrito[objIndex].cantidad = 1;
       //Eliminamos el item del array del carrito
-      listCart.splice(objIndex,1);
+      listCarrito.splice(objIndex,1);
     }
-    this.cart.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
+    this.carrito.next(listCarrito); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
   }
 }

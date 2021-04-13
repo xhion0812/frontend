@@ -1,4 +1,4 @@
-$main-color: #6394F8;
+/*$main-color: #6394F8;
 $light-text: #ABB0BE;
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
@@ -97,6 +97,7 @@ $light-text: #ABB0BE;
   font-size: 16px;
   margin: 25px 0 15px 0;
 
+  
   &:hover {
     background: lighten($main-color, 3%);
   }
@@ -106,7 +107,7 @@ $light-text: #ABB0BE;
   display: table;
   clear: both;
 }
-// Agregué estos styles para que quede mejor
+
 li {
   list-style-type: none;
 }
@@ -118,3 +119,6 @@ ul {
   z-index: 1;
   left: 63%;
 }
+
+*/
+

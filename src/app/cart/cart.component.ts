@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { CartService } from '../services/cart.service';
+import { ClientService } from '../Services/client.service';
 import { IItem } from '../interfaces/item.interface';
 
 @Component({
@@ -10,25 +10,32 @@ import { IItem } from '../interfaces/item.interface';
 })
 export class CartComponent implements OnInit {
 
-  public items: Array<IItem>
-  public totalPrice:number = 0;
-  public totalQuantity:number = 0;
-  constructor(private _cartService:CartService) { }
+
+ public items: Array<IItem>
+  public totalPrecio:number = 0;
+  public totalCantidad:number = 0;
+  constructor(private cartService:CartService, private client: ClientService ) { }
 
   ngOnInit() {
-    this._cartService.currentDataCart$.subscribe(x=>{
-      if(x)
+    this.cartService.datoCarrito.subscribe(dato=>{
+      if(dato)
       {
-        this.items = x;
-        this.totalQuantity = x.length;
-        this.totalPrice = x.reduce((sum, current) => sum + (current.price * current.quantity), 0);
+        this.items = dato;
+        this.totalCantidad = dato.length;
+        this.totalPrecio = dato.reduce((sum, articulo) => sum + (articulo.precio * articulo.cantidad), 0);
       }
     })
   }
 
-  public remove(producto:IItem)
-  {
-    this._cartService.removeElementCart(producto);
+  comprar(){
+
+    //this.client.postRequest("",producto).subscribe()
+  }
+
+  
+
+  public remover(producto:IItem){
+    this.cartService.removerElementoCarrito(producto);
   }
   
 

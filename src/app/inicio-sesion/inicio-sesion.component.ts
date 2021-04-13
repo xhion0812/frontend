@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 import { ClientService } from '../Services/client.service';
 
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { report } from 'process';
 
 
 @Component({
@@ -44,56 +45,53 @@ async onSubmit() {
     }
 
   this.load = false;
-  this.client.postRequestInicioSesion('http://localhost:5000/api/v01/user/inicio-sesion', {
-   email: this.form.value.email,
-   password: this.form.value.password
-  }).subscribe(
+  this.client.postRequestInicioSesion('http://localhost:5000/api/v01/user/inicio-sesion', data).subscribe(
   
   (response: any) => {
+  
+    Swal.fire({
+      title: 'Bienvenido !',
+      imageUrl: 'https://media0.giphy.com/media/ZZYXNDxMcMDXIblV8L/source.gif',
+      imageWidth: 400,
+      imageHeight: 200,
+
+    }).then(() => {
+      this.route.navigate(["/"])
+    });
+    
     console.log(response);
 
-    localStorage.setItem('token', response.token)
-    console.log(localStorage.getItem('token'));    
+    this.auth.login(response.token)
     
-    this.route.navigate(['/']);
+    this.auth.setCourrentUser(response.nombres)
     
+    this.auth.setCourrentApellido(response.apellidos)
+    
+    this.auth.setCourrentDocumento(response.documento)
+    
+    this.auth.setCourrentDireccion(response.direccion)
+    
+    this.auth.setCourrentTelefono(response.telefono)
+    
+    this.auth.setCourrentCorreo(response.correo)
+    
+  localStorage.setItem('token', response.token)
+  console.log(localStorage.getItem('token'));
+    
+  
   },
 
 (error) => {
-  console.log(error.status)
+
+  console.log(error.status);
 
 })
 
 } else{
-
+  
   console.log("Form error");
-}
+    
+    }
 
   }
-  async onSubmitToken() {
-
-        if (this.form.valid) {
-
-          this.client.postRequest('http://localhost:5000/api/v01/user/login', {
-            email: this.form.value.email,
-            password: this.form.value.password
-          }).subscribe(
-
-            (response: any) => {
-              console.log(response);
-              this.auth.login(response.token)
-              this.auth.setCourrentUser(response.name)
-              this.route.navigate( ['/']);
-          }),
-
-          (error) => {
-
-            console.log(error.status);
-
-          };
-        } else {
-
-          console.log("Form error");
-        }
-      }
 }

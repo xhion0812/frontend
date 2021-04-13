@@ -6,19 +6,9 @@
     box-sizing: border-box;
 }
 
-
-.datos{
-    position: absolute;
-    left: 135%;
-    width: 477px;
-    padding: 10px;
-    font-family: sans-serif;
-}
-
-.dat{
-    margin-top: -10%;
-    position: absolute;
-    margin-left: 45%;
+body {
+    color: #404040;
+    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body,
@@ -26,6 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    padding-top: 60px;
     align-items: center;
 }
 
@@ -41,8 +32,8 @@
     display: block;
     position: relative;
     width: 90%;
-    height: 15rem;
-    background: linear-gradient(45deg, #F87F97, #F87F97);
+    height: 17rem;
+    background: linear-gradient(45deg, #70CBF3, #D2F5FB);
     border-radius: 0 0 20px 20px;
 }
 
@@ -64,8 +55,8 @@
 
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     align-items: center;
     justify-content: center;
     border: 7px solid #FFFFFF;
@@ -73,8 +64,8 @@
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     position: absolute;
-    bottom: 50px;
-    left: calc(34% - 90px);
+    bottom: -40px;
+    left: calc(50% - 90px);
     z-index: 1;
 }
 
@@ -103,6 +94,18 @@
     max-width: 750px;
 }
 
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+
 .seccion-perfil-usuario .perfil-usuario-footer,
 .seccion-perfil-usuario .perfil-usuario-bio {
     display: flex;
@@ -119,20 +122,17 @@
     text-align: center;
 }
 
-.perfil-usuario-datos{
-    background: #5DEAA8;
-    height: 280px;
-    width: 75%;
-    padding: 10px;
-    margin: 10px;
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
 }
 
-.footer{
-    width: 1311px; 
-    height: 200px;
-    float: right;
-    
+.seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
 }
 
-
-   
+.seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}

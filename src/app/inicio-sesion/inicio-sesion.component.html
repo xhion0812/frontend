@@ -1,3 +1,5 @@
+<app-nav2></app-nav2>
+
 <div class="fondo">
     <div *ngIf="load">
         <div class="modal-dialog text-center">
@@ -6,7 +8,8 @@
                     <div class="col-12 user-img">
                         <img src="https://3.bp.blogspot.com/-7dGg2SxOnPc/W58gx5zIm3I/AAAAAAAAFCM/ov25hkvKW0I0B-qruNE4_7wP0v7tiW5sQCLcBGAs/s1600/favicon.png" th:src="@{/img/user.png}" />
                     </div>
-                    <form *ngIf="!(auth.isLoggedIn() | async)" [formGroup]="form" (ngSubmit)="onSubmitToken()" method="POST" [formGroup]="form" action="/inicio-sesion" (ngSubmit)="onSubmit()">
+                    
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()" method="POST">
                         <div class="form-group" id="user-group">
                             <input formControlName="email" type="email" class="form-control" placeholder="Nombre de Usuario">
                         </div>
@@ -18,14 +21,14 @@
                         </div>
                     </form>
 
-                    <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                        ¿No tienes una cuenta?<a href='/registro'>Suscribirse</a>
+                    <div th:if="${param.error}" [routerLink]="['/registro']" class="alert alert-danger" role="alert">
+                        ¿No tienes una cuenta?<a href='#' >Suscribirse</a>
                     </div>
 
                 </div>
             </div>
         </div>
-        <h1 *ngIf="auth.isLoggedIn() | async">Se ha entrado al Sistema exitosamente!</h1>
+        
     </div>
     <div *ngIf="!load" class="sk-chase" role="status">
         <div class="sk-chase-dot"></div>
@@ -37,3 +40,5 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
+
+<app-footer class="footer"></app-footer>

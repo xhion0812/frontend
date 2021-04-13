@@ -1,0 +1,23 @@
+
+#caja {
+    border-radius: 6px;
+    background: #eee6e60c;
+    height: auto;
+    width: auto;
+    padding: 30px;
+    margin: 80px;
+    margin-top: 4%;
+}
+
+.row {
+    margin: 4%;
+}
+
+.container {
+    margin-top: 8%;
+}
+
+.footer{
+    width: auto;
+    height: auto;
+}
