@@ -12,6 +12,8 @@ export class AuthService {
   private checkToken() : boolean {
     return !!localStorage.getItem('token');
   }
+
+
   login(token:string) : void {
 
     localStorage.setItem('token', token);
@@ -20,8 +22,9 @@ export class AuthService {
 
   }
 
-  setCourrentUser(user:string) : void {
-    localStorage.setItem('courrentUser', user);
+  
+  setCourrentUser(nombres:string) : void {
+    localStorage.setItem('courrentUser', nombres);
   }
 
   getCourrentUser() : string {
@@ -32,12 +35,73 @@ export class AuthService {
     localStorage.removeItem('courrentUser');
   }
 
+  setCourrentApellido(apellidos:string) : void{
+    localStorage.setItem('courrentApellido',apellidos)
+  }
+
+  getCourrentApellido() : string {
+    return localStorage.getItem('courrentApellido')
+  }
+
+  private deleteCourrentApellido() : void {
+    localStorage.removeItem('courrentApellido')
+  }
+
+  setCourrentDocumento(documento:string) : void {
+    localStorage.setItem('courrentDocumento',documento)
+  }
+
+  getCourrentDocumento() : string {
+    return localStorage.getItem('courrentDocumento')
+  }
+
+  private deleteCourrentDocumento() : void {
+    localStorage.removeItem('courrentDocumento')
+  } 
+
+  setCourrentDireccion(direccion:string) : void {
+    localStorage.setItem('courrentDireccion',direccion)
+  }
+
+  getCourrentDireccion() : string {
+    return localStorage.getItem('courrentDireccion')
+  }
+
+  private deleteCourrentDireccion() : void {
+    localStorage.removeItem('courrentDireccion')
+  }
+
+  setCourrentTelefono(telefono:string) : void {
+    localStorage.setItem('courrentTelefono', telefono)
+  }
+
+  getCourrentTelefono() : string {
+    return localStorage.getItem('courrentTelefono')
+  }
+
+  private deleteCourrentTelefono() : void {
+    localStorage.removeItem('courrentTelefono')
+  }
+  setCourrentCorreo(correo:string) : void {
+    localStorage.setItem('courrentCorreo',correo)
+  }
+
+  getCourrentCorreo() : string {
+    return localStorage.getItem('courrentCorreo')
+  }
+
+  private deleteCorrentCorreo() : void {
+    localStorage.removeItem('courrentCorreo')
+  }
+
+
   logout() : void {
     localStorage.removeItem('token');
     this.deleteCourrentUser();
     this.isLogin.next(false);
   }
 
+  
   isLoggedIn() : Observable<boolean> {
     return this.isLogin.asObservable();
    }

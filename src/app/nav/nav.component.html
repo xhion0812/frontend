@@ -5,15 +5,6 @@
                 <div class="user-menu">
                 </div>
             </div>
-            <li *ngIf="auth.isLoggedIn() | async" class="nav-item active">
-                <a class="nav-link">|Bienvenid@ {{auth.getCourrentUser()}}|<span class="sr-only"></span></a>
-            </li>
-            <li *ngIf="auth.isLoggedIn() | async" class="nav-item active">
-                <a class="nav-link" [routerLink]="['/cash']">Cash<span class="sr-only"></span></a>
-            </li>
-            <li *ngIf="auth.isLoggedIn() | async" class="nav-item active">
-                <a class="nav-link" [routerLink]="['/']" (click)="auth.logout()">Salir<span class="sr-only"></span></a>
-            </li>
             <div class="col-md-4">
                 <div class="header-right">
                     <ul class="list-unstyled list-inline">
@@ -36,19 +27,7 @@
                     </h1>
                 </div>
             </div>
-
-            <app-cart> </app-cart>
-
-            <!-- <div class="col-sm-6"> -->
-            <!-- <div class="shopping-item"> -->
-            <!-- <a href="./carrito">Cart - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- </div>
-    </div>
-</div> -->
-
-
+            
             <div class="mainmenu-area">
                 <div class="container">
                     <div class="row">
@@ -62,34 +41,48 @@
                         </div>
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             <div class="container-fluid">
-                                <a class="navbar-brand" href="#">Productos de la Canasta Familiar</a>
+                                <a *ngIf="(auth.isLoggedIn() | async)" class="navbar-brand" href="#" [routerLink]="['/tabla']" >Productos de la Canasta Familiar</a>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" (click)='irInicio()'>inicio</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href='/tabla'>Tabla</a>
-                                        </li>
 
-                                        <li class=" nav-item ">
-                                            <a class="nav-link" href='/inicio-sesion'>Login</a>
-                                            <a class="nav-link" (click)='irTable()'>Tabla</a>
-                                        </li>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link " href="" [routerLink]="['/']">inicio</a>
+                            </li>
 
-                                        <li class=" nav-item ">
-                                            <a class="nav-link" (click)='irInicioSesion()'>Login</a>
-                                        </li>
-                                    </ul>
-                                    <form class="d-flex ">
-                                        <input class="form-control me-2 " type="search " placeholder="Qué buscas?" aria-label="Search ">
-                                        <button type="button" class="btn btn-danger">Buscar</button> </form>
-                                </div>
-                            </div>
-                        </nav>
+                            <li *ngIf="!(auth.isLoggedIn() | async)" class=" nav-item ">
+                                <a class="nav-link"[routerLink]="['/inicio-sesion']" >Login</a>
+                            </li>
+                            
+                            <li *ngIf="!(auth.isLoggedIn() | async)" class=" nav-item ">
+                                <a class="nav-link"[routerLink]="['/registro']" >Registro</a>
+                            </li>
+
+                            <li class=" nav-item " *ngIf="auth.isLoggedIn() | async" >
+                                <a class="nav-link" [routerLink]="['/']" (click)="auth.logout()">Salir</a>
+                            </li>
+
+                            <li class=" nav-item " *ngIf="auth.isLoggedIn() | async" >
+                                <a class="nav-link" *ngIf="auth.isLoggedIn() | async">Bienvenido {{auth.getCourrentUser()}}</a>
+                            </li>
+
+                        </ul>
+                        
+                        
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search " placeholder="Qué buscas?" aria-label="Search ">
+                            <button type="button" class="btn btn-danger">Buscar</button> </form>
+                        </div>
                     </div>
-                </div>
+                    <ul class="carrito">
+                        <button type="button" class="cart"(click)="cart()"><a><i class="fa fa-shopping-cart"></i>Carrito</a></button>
+                    </ul>
+                </nav>
+                <app-cart *ngIf="abrirCart"></app-cart>
             </div>
+        </div>
+    </div>

@@ -1,9 +1,10 @@
 .fondo {
     background-image: url('https://www.ecestaticos.com/imagestatic/clipping/166/20c/16620c35ea06e264e49cb0478805f3d2/mercadona-suelta-lastre-inmobiliario-vende-27-supermercados-por-180m-a-un-fondo.jpg?mtime=1599216069');
     background-repeat: no-repeat;
-    width: 1400px;
+    width: 1310px;
     height: 700px;
     position: absolute;
+  
 }
 
 .main-section {
@@ -171,4 +172,11 @@ button {
     0% {
         transform: scale(1.0);
     }
+}
+
+.footer{
+    width: 1350px; 
+    height: 200px;
+    float: right;
+    margin: 688px 0px 0px 0px;
 }

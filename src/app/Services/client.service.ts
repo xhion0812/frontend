@@ -9,6 +9,15 @@ import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 export class ClientService {
 
   constructor(private http: HttpClient) { }
+  
+  getRequestAllsproductos(route: string){
+
+    let config:any = {
+      responseType: "json"
+    
+    }
+    return this.http.get(route, config)
+  } 
 
   getRequestTable(route: string, token?:string) {
 
@@ -24,6 +33,9 @@ export class ClientService {
   
   }
 
+  postRequestAnadirCarrito(route: string, data?:any){
+
+  }
 
 
   postRequestRegistro(route: string, data?:any, token?:string) {

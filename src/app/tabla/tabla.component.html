@@ -1,25 +1,45 @@
 <app-nav></app-nav>
+<br>
+
+<section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header">
+        <div class="perfil-usuario-portada">
+            <div class="perfil-usuario-avatar">
+                <img src="https://3.bp.blogspot.com/-7dGg2SxOnPc/W58gx5zIm3I/AAAAAAAAFCM/ov25hkvKW0I0B-qruNE4_7wP0v7tiW5sQCLcBGAs/s1600/favicon.png" th:src="@{/img/user.png}" alt="img-avatar">
+                <div class="datos">
+                    <div *ngIf="auth.isLoggedIn() | async">Nombres: {{auth.getCourrentUser()}}</div>
+                    <div *ngIf="auth.isLoggedIn() | async">apellidos: {{auth.getCourrentApellido()}}</div>
+                    <div class="dat">
+                        <div *ngIf="auth.isLoggedIn() | async">Correo: {{auth.getCourrentCorreo()}}</div>
+                        <div *ngIf="auth.isLoggedIn() | async">Celular: {{auth.getCourrentTelefono()}}</div>
+                        <div *ngIf="auth.isLoggedIn() | async">Documento: {{auth.getCourrentDocumento()}}</div>
+                        <div *ngIf="auth.isLoggedIn() | async">Direccion: {{auth.getCourrentDireccion()}}</div>
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
 <div class="container">
-
-
     <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered row-border hover">
         <thead class="thead-dark">
-            <tr>
-                <th>Id</th>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>imagen</th>
-            </tr>
+
         </thead>
+        
         <tbody>
             <tr *ngFor="let producto of productos">
-                <td>{{ producto.id }}</td>
-                <td>{{ producto.nombre }}</td>
-                <td>{{ producto.precio }}</td>
-                <td><img [src]="producto.url" alt="" width="100" height="100"></td>
+                <td>{{ producto[1] }}</td>
+                <td>{{ producto[3] }}</td>
+                <td><img [src]="producto[2]" alt="" width="100" height="100"></td>
 
+                <td><a [routerLink]="['/detallesproductos', producto[0]]" class="btn btn-primary">Ver más</a></td>
+
+                <button type="button" class="btn btn-danger ml-4" (click)="agregarCarrito(producto)" >Añadir al Carrito</button>
+                
             </tr>
         </tbody>
     </table>
 </div>
-<app-footer></app-footer>
+<br>
+<app-footer class="footer"></app-footer>

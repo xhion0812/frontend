@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
-
-
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +11,8 @@ export class NavComponent implements OnInit {
 
   constructor(public auth : AuthService, private route: Router) { }
 
+  public abrirCart:boolean = false;
+
   irInicio(){
     this.route.navigate(['/'])
   }
@@ -23,10 +23,13 @@ export class NavComponent implements OnInit {
   irTable(){
     this.route.navigate(['/tabla'])
   }
-
-
+  
   ngOnInit(): void {
  
   }
 
+  cart(){
+
+    this.abrirCart = !this.abrirCart;
+  }
 }

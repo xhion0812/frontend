@@ -30,7 +30,6 @@ export class RegistroComponent implements OnInit {
       telefono: ['', Validators.required],
       correo: ['', Validators.required],
       password: ['', Validators.required],
-      password_verifi: ['', Validators.required]
     });
   }
   
@@ -47,8 +46,7 @@ export class RegistroComponent implements OnInit {
         telefono: this.form.value.telefono,
         correo: this.form.value.correo,
         password: this.form.value.password,
-        password_verifi: this.form.value.password_verifi,
-      
+     
       }).subscribe(
 
         (response: any) => {
@@ -68,24 +66,21 @@ export class RegistroComponent implements OnInit {
             showConfirmButton: false,
             timer: 2000
           }).then(() => {
-            this.route.navigate(['/inicio2'])
+            this.route.navigate(['/'])
           })
 
           });
 
       (error) => {
         //this.load = true;
-
         console.log(error.status);
-
       }
-
 
     } else {
 
       console.log("Form error");
     }
-  
-
   }
+
+  
 }

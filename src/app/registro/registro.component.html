@@ -1,3 +1,5 @@
+<app-nav2></app-nav2>
+
 <div class="img">
     <div *ngIf="load">
         <div class="registro">
@@ -46,21 +48,12 @@
                                 <input formControlName="password" type="password" class="form-control" name="clave" placeholder="Ingrese su clave">
                             </div>
 
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">Ingrese su Clave</label>
-                                <input formControlName="password_verifi" type="password" class="form-control" name="confirmarClave" placeholder="Repetir Clave">
-                            </div>
-
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
                         <button type="submit" class="btn btn-primary">Registrarse</button>
                     </div>
-                    <div class="col-xs-12 col-md-4">
 
-                        <a class="boton1" href="/inicio" class="btn btn-primary">Inicio</a>
-                        <a class="boton1" href='/' class="btn btn-primary">Inicio</a>
-                    </div>
                 </form>
             </div>
         </div>
@@ -73,3 +66,5 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
+
+<app-footer class="footer"></app-footer>

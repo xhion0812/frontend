@@ -1,3 +1,5 @@
+
+
 .img {
     background-image: url('https://www.ecestaticos.com/image/clipping/588906965d3b24fc2d442db7b52421ce/los-seis-productos-que-es-mejor-no-comprar-en-un-supermercado-carne-envasada-pilas.jpg');
     background-repeat: no-repeat;
@@ -23,9 +25,9 @@ div .registro {
 }
 
 .fondo {
-    /*background-image: url(../../static/imagenes/fondo.jpg);*/
+    
     background-size: cover;
-    /* background-color: #042353; */
+    
     width: 50%;
     height: 100vh;
     position: relative;
@@ -197,3 +199,12 @@ div .registro {
 .boton1 {
     position: right 200px;
 }
+
+.footer{
+    width: 1350px; 
+    height: 100px;
+    float: right;
+    margin: 688px 0px 0px 0px;
+}
+
+
